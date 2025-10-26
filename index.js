@@ -14,6 +14,15 @@ app.get('/', (req, res) =>{
     res.send('Food buddy app code')
 })
 
+
 app.listen(port, () =>{
     console.log(`Food buddy app is running ${port}`)
 })
+
+app.listen(port, () =>{
+    console.log(`Food buddy app is running ${port}`)
+})
+
+
+
+
