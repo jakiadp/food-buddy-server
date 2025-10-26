@@ -19,9 +19,7 @@ app.listen(port, () =>{
     console.log(`Food buddy app is running ${port}`)
 })
 
-app.listen(port, () =>{
-    console.log(`Food buddy app is running ${port}`)
-})
+
 
 
 
