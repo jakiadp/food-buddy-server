@@ -1,4 +1,6 @@
 
-
 node_modules
 .env
+
+# DB_NAME=food_buddy
+# DB_PASS=7QJaQjO5KizzxAU5
