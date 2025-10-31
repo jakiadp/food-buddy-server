@@ -1,3 +1,4 @@
+
 const express = require('express');
 const cors = require('cors');
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -58,7 +59,6 @@ app.get('/', (req, res) =>{
 app.listen(port, () =>{
     console.log(`Food buddy app is running ${port}`)
 })
-
 
 
 
