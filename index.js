@@ -36,7 +36,7 @@ async function run() {
     await client.connect();
 
 // food
-
+// foo
 const foobsCollection = client.db('foodBuddy').collection('foods');
 
 // food api
