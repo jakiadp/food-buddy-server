@@ -14,12 +14,12 @@ app.use(express.json());
 
 
 
-const uri = "mongodb+srv://food_buddy:7QJaQjO5KizzxAU5@cluster0.mn2bxax.mongodb.net/?appName=Cluster0";
+// const uri = "mongodb+srv://food_buddy:7QJaQjO5KizzxAU5@cluster0.mn2bxax.mongodb.net/?appName=Cluster0";
 
 
 
 
-// const uri = `mongodb+srv://${process.env.DB_NAME}:${process.env.DB_NAME}@cluster0.mn2bxax.mongodb.net/?appName=Cluster0`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.mn2bxax.mongodb.net/?appName=Cluster0`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -34,6 +34,22 @@ async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
+
+// food
+
+const foobsCollection = client.db('foodBuddy').collection('foods');
+
+// food api
+app.get('/foods', async ( req, res) =>{
+  const cursor = foobsCollection.find();
+  const result = await cursor.toArray();
+  res.send(result);
+
+})
+
+
+
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
